@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+}
+
+.modal_background {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  background-color: rgba(0,0,0,0.4)
+}
+
+.hide {
+  display: none;
+}
+
+.modal_container {
+  background-color: #f4f4f4;
+  margin: 26% auto;
+  height: 125px;
+  width: 150px;
+  border-radius: 8px;
+}
+
+.modal_header {
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.modal_button_container {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.modal_button {
+  width: 60px;
+  height: 30px;
+  cursor: cursor;
+}
