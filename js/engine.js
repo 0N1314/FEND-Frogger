@@ -23,8 +23,8 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime,
-        id;
+        lastTime;
+        // id;
         // replay = document.querySelector('button.modal_button');
         // modal = document.querySelector('.modal_background');
         //
@@ -67,13 +67,37 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
          if (player.victory === true) {
-           win.cancelAnimationFrame(id);
-         }
-         else if (player.replay === true && player.victory === false){
-           id = win.requestAnimationFrame(main);
+           addModal();
          } else {
            win.requestAnimationFrame(main);
          }
+    }
+
+    function addModal() {
+      const container = document.querySelector('body');
+
+      const modal = `
+      <div class = "modal_background" id = "modal">
+        <div class = 'modal_container'>
+          <div class = "modal_header">
+            <h2 class = "modal_title">You Win!</h2>
+          </div>
+          <div class = "modal_button_container">
+            <button class = "modal_button">Replay</button>
+          </div>
+        </div>
+      </div>`
+
+      container.insertAdjacentHTML('afterbegin', modal);
+
+      let button = document.querySelector('.modal_button');
+      button.addEventListener('click', function() {
+        let modal = document.getElementById('modal');
+        modal.remove();
+        player.victory = false;
+        // player.reset();
+        win.requestAnimationFrame(main);
+      });
     }
 
     /* This function does some initial setup that should only occur once,

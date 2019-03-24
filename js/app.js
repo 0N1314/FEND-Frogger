@@ -76,17 +76,17 @@ class Player {
 
     if (this.y === -15) {
       this.victory = true;
-      this.showModal();
-      // this.reset();
-      const replay = document.querySelector('button.modal_button');
-      replay.addEventListener('click', function() {
-        const modal = document.querySelector('.modal_background');
-        modal.classList.toggle('hide');
-        player.victory = false;
-        player.replay = true;
-        player.startX;
-        player.startY;
-      })
+      // this.showModal();
+      this.reset();
+      // const replay = document.querySelector('button.modal_button');
+      // replay.addEventListener('click', function() {
+      //   const modal = document.querySelector('.modal_background');
+      //   modal.classList.toggle('hide');
+      //   player.victory = false;
+      //   player.replay = true;
+      //   player.startX;
+      //   player.startY;
+      // })
     }
   }
 
@@ -100,11 +100,10 @@ class Player {
     modal.classList.toggle('hide');
   }
 
-  // reset() {
-  //   id;
-  //   this.startX;
-  //   this.startY;
-  // }
+  reset() {
+    this.startX;
+    this.startY;
+  }
 }
 
 // Now instantiate your objects.
