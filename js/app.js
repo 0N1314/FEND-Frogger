@@ -76,17 +76,7 @@ class Player {
 
     if (this.y === -15) {
       this.victory = true;
-      // this.showModal();
       this.reset();
-      // const replay = document.querySelector('button.modal_button');
-      // replay.addEventListener('click', function() {
-      //   const modal = document.querySelector('.modal_background');
-      //   modal.classList.toggle('hide');
-      //   player.victory = false;
-      //   player.replay = true;
-      //   player.startX;
-      //   player.startY;
-      // })
     }
   }
 
@@ -101,8 +91,8 @@ class Player {
   }
 
   reset() {
-    this.startX;
-    this.startY;
+    this.x = this.startX;
+    this.y = this.startY;
   }
 }
 
@@ -129,32 +119,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-// const modal = document.querySelector('.modal_background');
-//
-//
-// function showModal() {
-//     modal.classList.toggle('hide');
-//
-//   }
-//
-//   function hideModal() {
-//     modal.classList.add('hide');
-//   }
-//
-  // const replay = document.querySelector('button.modal_button');
-//
-  // replay.addEventListener('click', function() {
-  //   hideModal();
-  // })
-//
-//   const cancel = document.querySelector('.modal_button.modal_cancel');
-//
-//   cancel.addEventListener('click', function() {
-//     hideModal();
-//   })
-//
-//   const modalClose = document.querySelector('.modal_close');
-//   modalClose.addEventListener('click', function() {
-//     hideModal();
-//   })
